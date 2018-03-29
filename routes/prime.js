@@ -1,18 +1,33 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function (req, res, next) {
+router.post('/', function (req, res, next) {
 
-    let myNumber = req.query.number;
+    let myNumber = req.body.number;
     let list = primeList(myNumber);
-    res.json({
+    
+    // res.json({
+    //     'isPrime': isPrime(myNumber),
+    //     'numberOfPrimes': list.length,
+    //     'primeList': list,
+    //     '4k+1': numOfprimesFormulaOne(list),
+    //     '4k+3': numOfprimesFormulaTwo(list)
+    // })
+
+    let result = {
         'isPrime': isPrime(myNumber),
         'numberOfPrimes': list.length,
         'primeList': list,
         '4k+1': numOfprimesFormulaOne(list),
         '4k+3': numOfprimesFormulaTwo(list)
-    })
+    }
 
+
+    res.render('primes',{result});
+});
+
+router.get('/', function (req, res, next) {
+    res.render('primes',{result:''});
 });
 
 
@@ -34,7 +49,7 @@ function primeList(number) {
     let mPrimeList = [];
 
     for (let i = 0; i <= number; i++) {
-      //  let flag = isPrime(i);
+        //  let flag = isPrime(i);
         if (isPrime(i)) {
             mPrimeList.push(i);
         }

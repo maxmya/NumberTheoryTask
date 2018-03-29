@@ -6,3 +6,22 @@ body {
 a {
   color: #00B7FF;
 }
+
+.cont {
+  display: grid;
+  grid-template-columns: 100px 400px;
+  grid-template-rows: auto auto auto auto auto;
+  grid-column-gap: 5px;
+  grid-row-gap: 10px;
+}
+
+.narrow {
+  width: 100px;
+  background-color: antiquewhite;
+}
+
+.wide {
+  background-color: cyan;
+  word-break: break-all;
+  width: 400px;
+}
