@@ -4,8 +4,9 @@ var router = express.Router();
 router.post('/', function (req, res, next) {
 
     let myNumber = req.body.number;
+
     let list = primeList(myNumber);
-    
+
     // res.json({
     //     'isPrime': isPrime(myNumber),
     //     'numberOfPrimes': list.length,
@@ -22,12 +23,15 @@ router.post('/', function (req, res, next) {
         '4k+3': numOfprimesFormulaTwo(list)
     }
 
-
-    res.render('primes',{result});
+    res.render('primes', {
+        result
+    });
 });
 
 router.get('/', function (req, res, next) {
-    res.render('primes',{result:''});
+    res.render('primes', {
+        result: ''
+    });
 });
 
 
@@ -35,7 +39,7 @@ function isPrime(number) {
     if (number === 2)
         return true
 
-    if (number === 1 || number === 0)
+    if (number == 1 || number == 0)
         return false
 
     for (let i = 2; i <= number / i; i++) {

@@ -24,4 +24,5 @@ a {
   background-color: cyan;
   word-break: break-all;
   width: 400px;
+  padding: 10px;
 }
