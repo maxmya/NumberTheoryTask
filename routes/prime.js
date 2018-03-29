@@ -15,6 +15,7 @@ router.get('/', function (req, res, next) {
 
 });
 
+
 function isPrime(number) {
     if (number === 2)
         return true
