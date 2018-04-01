@@ -1,13 +1,14 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
 <h2>
-  Task 1
+  Prime Calculations
   <a href="/">Home</a>
 </h2>
 <p> PRIMES: write a code to tabulate the number of primes less than x, the number of primes of the form 4k+1 less than x, the
   number of primes of the form 4k+3 less than x, where x assumes the values 1000, 2000,..., 10000. Print out your code and
   the tables. What is your observation?
 </p>
-<p>Observation : Number of primes on the form 4k+1 plus those of the form 4k+3 plus 1 (prime number 2) is equal to the number of total primes in range from 0 to x</p>
+<p>Observation : Number of primes on the form 4k+1 plus those of the form 4k+3 plus 1 (prime number 2) is equal to the number
+  of total primes in range from 0 to x</p>
 <form method="POST">
   <input name="number" type="number">
   <button type="submit">Check</button>
@@ -24,16 +25,24 @@
     </div>
     <div class="narrow"> Prime List : </div>
     <div class="wide">
-        <%= result.primeList %>
+      <%= result.primeList %>
     </div>
     <div class="narrow"> Primes of Form [4k+1] : </div>
 
     <div class="wide">
       <%= result["4k+1"] %>
     </div>
+    <div class="narrow"># Primes of Form [4k+1] : </div>
+    <div class="wide">
+      <%= result["#4k+1"] %>
+    </div>
     <div class="narrow">Primes of Form [4k+3] : </div>
     <div class="wide">
       <%= result["4k+3"] %>
+    </div>
+    <div class="narrow"># Primes of Form [4k+3] : </div>
+    <div class="wide">
+      <%= result["#4k+3"] %>
     </div>
     <% } %>
 </div>

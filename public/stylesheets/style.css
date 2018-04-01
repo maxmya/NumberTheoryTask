@@ -3,10 +3,6 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
 .cont {
   display: grid;
   grid-template-columns: 100px 400px;
@@ -26,4 +22,20 @@ a {
   word-break: break-all;
   width: 400px;
   padding: 10px;
+}
+
+.bar {
+  background-color: darkslategray;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.link {
+  color: white;
+  text-decoration: none;
+  margin: 5px;
+}
+
+a:hover {
+  color: yellowgreen;
 }

@@ -6,21 +6,18 @@ router.post('/', function (req, res, next) {
     let myNumber = req.body.number;
 
     let list = primeList(myNumber);
+    let f1 = numOfprimesFormulaOne(list);
+    let f2 = numOfprimesFormulaTwo(list);
 
-    // res.json({
-    //     'isPrime': isPrime(myNumber),
-    //     'numberOfPrimes': list.length,
-    //     'primeList': list,
-    //     '4k+1': numOfprimesFormulaOne(list),
-    //     '4k+3': numOfprimesFormulaTwo(list)
-    // })
 
     let result = {
         'isPrime': isPrime(myNumber),
         'numberOfPrimes': list.length,
         'primeList': list,
-        '4k+1': numOfprimesFormulaOne(list),
-        '4k+3': numOfprimesFormulaTwo(list)
+        '4k+1': f1,
+        '#4k+1': f1.length,
+        '4k+3': f2,
+        '#4k+3': f2.length
     }
 
     res.render('primes', {

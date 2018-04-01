@@ -12,17 +12,14 @@
   <h1>
     <%= title %>
   </h1>
-  <p>Welcome to
-    <%= title %>
+  <div class="bar">
+    <a href="/prime" class="link">Prime Calculations</a>
+    <a href="/cong" class="link">Linear Congruences</a>
+    <a href="/crt" class="link">Chinese Remainder Theorem</a>
+  </div>
+  <p>
+    <%- paragraph.replace('\n', '<br>')  %>
   </p>
-
-
-  <a href="/prime">Task 1 Prime Calculations</a>
-  <br>
-  <a href="/#">Task 2</a>
-  <br>
-  <a href="/#">Task 3</a>
-
 </body>
 
 </html>
