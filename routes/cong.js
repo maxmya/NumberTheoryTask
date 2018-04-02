@@ -23,27 +23,15 @@ router.get('/', function (req, res, next) {
 });
 
 // function to calculate gcd 
-function egcd(a, b) {
-    if (a == 0)
-        return b;
-
-    while (b != 0) {
-        if (a > b)
-            a = a - b;
-        else
-            b = b - a;
-    }
-
-    return a;
-};
-
+function egcd(m, n) {
+    if (n == 0) return m;
+    return egcd(n, m % n);
+}
 
 function linearCongurent(a, b, m) {
     let g = egcd(a, m);
     if (b % g != 0)
         return;
-    
-
 }
 
 module.exports = router;

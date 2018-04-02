@@ -11,10 +11,14 @@
   of total primes in range from 0 to x</p>
 <form method="POST">
   <input name="number" type="number">
-  <button type="submit">Check</button>
+  <button type="submit" onclick=" document.getElementById('loader').style.display='block' ">Check</button>
+  <div class="loader" id="loader"></div>
 </form>
 <div class="cont">
   <% if (result) { %>
+    <script>
+      document.getElementById('loader').style.display='none'
+    </script>
     <div class="narrow"> is prime? :</div>
     <div class="wide">
       <%= result.isPrime %>
