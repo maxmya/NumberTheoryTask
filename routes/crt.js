@@ -4,10 +4,9 @@ var router = express.Router();
 
 router.get('/', function (req, res, next) {
 
-    let reso = solveModuli([6, 3,2], [3, 5,7]);
 
     res.render('crt', {
-        reso
+        solution: ''
     });
 
 
@@ -16,15 +15,25 @@ router.get('/', function (req, res, next) {
 router.post('/', function (req, res, next) {
 
 
+    let a = [req.body.a1, req.body.a2, req.body.a3];
+    let m = [req.body.m1, req.body.m2, req.body.m3];
+    try {
+        let solution = solveModuli(a, m);
 
+        res.render('crt', {
+            solution
+        })
 
-
+    }catch(e){
+        alert(e)
+    }
 
 
 });
 
 
 function solveModuli(a, m) {
+
     let product = 1;
     for (let i = 0; i < m.length; i++) {
         product *= m[i];
@@ -54,7 +63,6 @@ function mPower(a, po, mod) {
         power *= a;
         power %= mod;
     }
-    console.log(power)
     return power;
 }
 

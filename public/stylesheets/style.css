@@ -40,6 +40,11 @@ a:hover {
   color: yellowgreen;
 }
 
+.board {
+  font-size: 30px;
+  padding: 40px;
+}
+
 .loader {
   border: 16px solid #f3f3f3;
   /* Light grey */
