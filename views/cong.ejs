@@ -1,5 +1,48 @@
 <link rel='stylesheet' href='/stylesheets/style.css' />
+<style>
+  input {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    width: 150px;
+    height: 50px;
+    font-size: large;
+    text-align: center;
+  }
+
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+  }
+
+  .window {
+    padding: 15px;
+    margin: 10px;
+  }
+</style>
 <h2>
   Linear Congruences
   <a href="/">Home</a>
 </h2>
+<p>
+  Linear Congruence: Write a code to solve a linear congruence. Apply it for some particular examples. Print out the code and
+  the solved examples, as well.
+</p>
+<form method="POST" style="margin:50px" class="board">
+
+  <input name="a" placeholder="A"> X =
+  <input name="b" placeholder="B"> mod
+  <input name="m" placeholder="M">
+
+  <input type="submit" value="calculate">
+
+  <% if (sol) { %>
+    <h1>X =
+      <%= sol %>
+    </h1>
+    <% } %>
+</form>
