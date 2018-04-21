@@ -28,9 +28,11 @@ app.use('/', index);
 var prime = require('./routes/prime');
 var crt = require('./routes/crt');
 var cong = require('./routes/cong');
+var ppt = require('./routes/ppt');
 app.use('/prime', prime);
 app.use('/crt', crt);
 app.use('/cong', cong);
+app.use('/ppt', ppt);
 
 
 // catch 404 and forward to error handler

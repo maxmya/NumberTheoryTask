@@ -1,0 +1,65 @@
+<link rel='stylesheet' href='/stylesheets/style.css' />
+<style>
+    .narrow {
+        background-color: #DEC3AF;
+
+    }
+
+    .wide {
+        background-color: #70323E;
+        color: white;
+    }
+</style>
+<h2>
+    Primitive Pythagorean Triples
+    <a href="/">Home</a>
+</h2>
+<form method="POST">
+    <input name="m" placeholder="Enter a random value for m">
+    <input type="submit" value="Calculate PPTs" onclick=" document.getElementById('loader').style.display='block' ">
+</form>
+<div>
+
+</div>
+<div class="loader" id="loader"></div>
+<div class="cont">
+    <% if (ppts) { %>
+        <script>
+            document.getElementById('loader').style.display = 'none'
+        </script>
+        <div class="narrow"> Entered m :</div>
+        <div class="wide">
+            <%= ppts.m %>
+        </div>
+        <div class="narrow"> type of m :</div>
+        <div class="wide">
+            <%= ppts.type %>
+        </div>
+        <div class="narrow"> posible n values such gcd(m,n)=1 and n of diffrenet type: </div>
+        <div class="wide">
+            <%= ppts.n %>
+        </div>
+        <div class="narrow"> Values of X </div>
+        <div class="wide">
+            <%= ppts.x %>
+        </div>
+        <div class="narrow"> Values of Y </div>
+        <div class="wide">
+            <%= ppts.y %>
+        </div>
+        <div class="narrow"> Values of Z </div>
+        <div class="wide">
+            <%= ppts.z %>
+        </div>
+        <div class="narrow">Triples of (X,Y,Z)</div>
+        <div class="wide">
+            <% for(let i =0 ; i < ppts.x.length ; i++){ %>
+
+            ( <%= ppts.x[i] %> , <%= ppts.y[i] %> , <%=ppts.z[i]%>)
+            <br>
+
+            <%}%>
+            
+        </div>
+        <% } %>
+</div>
