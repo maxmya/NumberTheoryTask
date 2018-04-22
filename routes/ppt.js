@@ -36,7 +36,7 @@ function solve(m) {
     sol.m = m;
     if (m % 2 == 0) {
         sol.type = 'even';
-        for (let i = 1; i < m - 1; i++) {
+        for (let i = 0; i < m ; i++) {
             if (i % 2 != 0) {
                 if (egcd(m, i) == 1) {
                     sol.n.push(i)
@@ -46,7 +46,7 @@ function solve(m) {
 
     } else {
         sol.type = 'odd';
-        for (let i = 1; i < m - 1; i++) {
+        for (let i = 0; i < m ; i++) {
             if (i % 2 == 0) {
                 if (egcd(m, i) == 1) {
                     sol.n.push(i)
